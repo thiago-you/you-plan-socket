@@ -2,6 +2,14 @@
     "name": "socket-youplan",
     "version": "0.0.1",
     "description": "Youplan server socket.io",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "keywords": [
+        "json-socket, heroku, node, API, socket.io"
+    ],
+    "author": "Thiago You",
+    "license": "ISC",
     "dependencies": {
         "express": "^4.17.3",
         "socket.io": "^4.4.1"
