@@ -25,19 +25,19 @@ io.on('connection', (socket) => {
             }
         });
     
-        socket.on('disconnect', () => {
-            if (sockets[id] != undefined) {
-                const userId = sockets[id];
+        // socket.on('disconnect', () => {
+        //     if (sockets[id] != undefined) {
+        //         const userId = sockets[id];
                 
-                delete sockets[id];
+        //         delete sockets[id];
                 
-                setTimeout(() => {
-                    if (!Object.values(sockets).includes(userId)) {
-                        io.emit('user-unjoin', userId);
-                    }
-                }, 10000);
-            }
-        });
+        //         setTimeout(() => {
+        //             if (!Object.values(sockets).includes(userId)) {
+        //                 io.emit('user-unjoin', userId);
+        //             }
+        //         }, 10000);
+        //     }
+        // });
 
         socket.on('fetchMessages', (msg) => {
             socket.broadcast.to(room).emit('fetchMessages', msg);
